@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div style="text-align: center;">
+    <br>
+    <br>
+    <h1 style="color: rgb(255, 8, 8);">¡¡¡¡¡ Advertencia Esta Seguro De Borrar La Oferta !!!!!</h1>
+      <div style="color: chocolate;">
+        <br>
+        <br>
+        <p style="font-size: 30px;">Estas seguro que quieres borrar la oferta</p>
+        <br>
+        <p style="font-size: 20px;">{{ oferta.oferta }}%</p>
+        <img src="{{ producto.foto.url }}" style="height: 400px;">
+        <br>
+        <br>
+        <br>
+        <p style="font-size: 30px;">Descripcion</p>
+        <br>
+        <p style="font-size: 20px;">{{ oferta.detalle }}</p>
+        <br>
+        <br>
+        <br>
+        <p style="font-size: 30px;">Hora De Oferta</p>
+        <br>
+        <p style="font-size: 20px;">{{ oferta.fecha_oferta}}</p>
+        <br>
+        <br>
+        <br>
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input type="submit" action="" value="Yes, delete." />
+        </form>
+      </div>
+      <br>
+      <br>
+  </div>
+</div>
+{% endblock %}

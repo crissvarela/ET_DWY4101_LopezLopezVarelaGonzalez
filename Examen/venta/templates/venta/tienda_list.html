@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="container-fluid">
+    <br>
+    <h1 style="font-size: 60px; ">Productos</h1>
+    <br>
+    <br>
+    <table class="table table-striped" style="color:aliceblue; font-size: 20px; background-color: rgb(12, 117, 77);">
+      <thead>
+        <tr >
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+        <th>Administrar</th>
+        </tr>
+      </thead>
+    <tbody style="text-align: justify; margin-right: 10px;">
+    {% for Producto in object_list %}
+    <tr>
+      <td>{{ Producto.nombre }}</td>
+      <td>{{ Producto.descripcion }}</td>
+      <td>${{ Producto.precio }}</td>
+      <td>{{ Producto.fecha_producto }}</td>
+      <td>
+      <a href="{% url 'producto_update'  Producto.id  %}" class="btn btn-dark btn-sm" role="button">Actualizar</a>
+      <a href="{% url 'producto_delete'  Producto.id  %}" class="btn btn-danger btn-sm" role="button">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+<br>
+<br>
+{% endblock %}

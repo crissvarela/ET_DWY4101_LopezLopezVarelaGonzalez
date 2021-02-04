@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<body>
+    <div class="container-fluid">
+    <div class="masthead container d-flex align-items-center flex-column" >
+        <div class="login-page" style="text-align: center;">
+            <div class="form">
+                <br>
+                <br>
+                <h1>Agregar Oferta</h1>
+                <br>
+                <br>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div>
+                        <td> <label class="label"> Porcentaje de Descuento: </label> </td>
+                        <p></p>
+                        <td>{{ form.oferta }}</td>
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <td> <label class="label"> Detalle de Oferta: </label> </td>
+                        <p></p>
+                        <td>{{ form.detalle }}</td>
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <td> <label class="label"> Hora de Registro Oferta: </label> </td>
+                        <p></p>
+                        <td>{{ form.fecha_oferta }}</td>
+                    </div>
+                    <br>
+                    <input type="submit" value="Registrar" />
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div style="text-align: center;">
+        <br>
+        <h1 style="color: brown; font-size: 50px;">Producto</h1>
+        <br>
+        <h2>Titulo</h2>
+        <h2>{{ producto }}</h2>
+        <br>
+        <div style="color: chocolate;">
+            <img src="{{ producto.foto.url }}" style="height: 400px;">
+        </div>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Descripcion</p>
+            <p style="font-size: 20px;">{{ producto.descripcion }}</p>
+        </div>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Precio</p>
+            <p style="font-size: 20px;">${{ producto.precio }}</p>
+        </div>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Fecha</p>
+            <p style="font-size: 20px;">{{ producto.fecha_producto }}</p>
+        </div>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Tienda</p>
+            <p style="font-size: 20px;">{{ producto.tienda }}</p>
+        </div>
+        <br>
+        <div style="text-align: center;"> 
+            <a href="{% url 'producto_list' %}" class="btn btn-primary">Volver</a>
+        </div>
+        <br>
+    </div>
+</div>
+{% endblock %}

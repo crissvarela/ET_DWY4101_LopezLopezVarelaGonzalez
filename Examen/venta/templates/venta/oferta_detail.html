@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div style="text-align: center;">
+        <br>
+        <h1 style="color: brown; font-size: 50px;">Oferta</h1>
+        <br>
+        <h2>Titulo</h2>
+        <h2>{{ oferta }}</h2>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Porcentaje De Descuento</p>
+            <p style="font-size: 20px;">{{ oferta.oferta }}%</p>
+        </div>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Detalle De La Oferta</p>
+            <p style="font-size: 20px;">{{ oferta.detalle }}</p>
+        </div>
+        <br>
+        <div style="color: chocolate;">
+            <p style="font-size: 30px;">Hora De Oferta</p>
+            <p style="font-size: 20px;">{{ oferta.fecha_oferta }}</p>
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"> 
+            <a href="{% url 'oferta_list' %}" class="btn btn-primary">Volver</a>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+{% endblock %}
